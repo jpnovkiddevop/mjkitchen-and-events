@@ -1,0 +1,22 @@
+{% extends 'menus/base.html' %}
+
+{% block content %}
+ <h3 class="h3 mt-2 mb-4">Your Food Cart</h3>
+<div class="shadow p-4 mb-4 mt-5 rounded mjcart">
+ {% for cartitem in cartitems %}
+   <div>
+    <h3 class="h3">{{ cartitem.foodname }} </h3>
+    <h4>Price ksh_{{ cartitem.price }}</h4>
+    <br>
+   </div>
+
+{% endfor %}
+    <div>
+    <h5 class="total-price">Total price <br> ksh_{{ total_price }}</h5>
+    </div>
+    <a href="{% url 'order' %}" class="btn btn-success btn-sm">place order</a>
+</div>
+
+
+
+{% endblock %}
