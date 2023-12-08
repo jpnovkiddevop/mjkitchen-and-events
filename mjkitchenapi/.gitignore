@@ -1,0 +1,32 @@
+# .gitignore
+
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Python virtual environment
+venv/
+
+# Secret configuration file
+siri.py
+
+# Database
+*.sqlite3
+
+# Log files
+*.log
+
+# Media files
+media/
+
+# Ignore local settings
+settings/local.py
+
+# Ignore environment variables file
+.env
+
+# Ignore the Pipfile and Pipfile.lock files for Pipenv
+Pipfile
+Pipfile.lock

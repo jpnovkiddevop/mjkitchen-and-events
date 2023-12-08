@@ -1,0 +1,49 @@
+{% extends 'events/base.html' %}
+
+
+{% block content %}
+  <center>
+    <h3 class="h3 mt-3">Mj Upcoming Events</h3>
+  </center>
+    
+
+  {% for event in events %}
+
+  <div class="card mb-3 m-3" style="background-color:azure">
+    <div class="card-header ">
+       {{ event.name }}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">managed by {{ event.manager }}</h5>
+        <p class="card-text ">
+          <ul class="mjlinks">
+            <li>venue: {{ event.venue }}</li>
+            <li>date: {{ event.eventdate }}</li>
+            <li>Days till : {{ event.Days_till }} days till this event</li>
+            <li>Occurred: {{ event.Is_past }}</li>
+            <li>Approved: {{ event.approved }}</li>
+            <li>ticket @ksh{{ event.ticketprice }}</li>
+          </ul>
+            {% if event.approved %}
+            <a href="#" class="btn btn-secondary mb-2">buy ticket</a>
+            {% endif %}
+        </p>
+        <div class="card-footer text-muted">
+          {% if user.is_authenticated %}
+          {% if user == event.manager %}
+          <a href="{% url 'update-event' event.id %}" class="btn btn-outline-secondary btn-sm" >
+            update event
+          </a>
+          <a href="{% url 'delete-event' event.id %}" class="btn btn-outline-danger btn-sm">
+            delete event
+          </a>
+          {% endif %}
+          {% endif %}
+        </div>
+      </div> <br/>
+  </div>
+
+  {% endfor %}
+
+
+{% endblock %}

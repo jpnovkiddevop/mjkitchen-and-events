@@ -1,0 +1,18 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+   <div class="shadow p-4 mb-4 rounded">
+    <h3 class="h3 mt-3 mb-2">Register </h3>
+    <br>
+    <form action="" method=POST>
+        {% csrf_token %}
+    
+    
+        {{ form.as_p }}
+        <input type="submit" value="submit" class="btn btn-secondary mb-3">
+    </form>
+   </div>
+
+
+
+{% endblock %}

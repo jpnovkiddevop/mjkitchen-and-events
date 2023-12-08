@@ -1,0 +1,22 @@
+.total-price {
+    font-size: 1.2rem;
+    height: 150px;
+    width: 150px;
+    border: 1px solid burlywood;
+    border-radius: 50%;
+    animation: rolanime 4s 4s infinite;
+    text-align: center;
+}
+
+@keyframes rolanime {
+    0% {
+        transform: rotate(0deg);
+        border: 1px solid burlywood;
+        ;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        border: 2px dotted aqua;
+    }
+}

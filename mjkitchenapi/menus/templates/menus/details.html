@@ -1,0 +1,22 @@
+{% extends 'menus/base.html' %}
+
+{% block content %}
+     <div class="shadow p-4 mb-4 mt-5 rounded">
+      <div>
+         {% if menudetails.foodimage %}
+         <img src="{{ menudetails.foodimage.url }}" alt="{{ menu.name }}" height="300" width="300">
+         {% else %}
+         <p>No image available</p>
+         {% endif %}
+
+      </div>
+        <h3 class="h3" name="item">{{ menudetails.foodname }} - {{ menudetails.foodtype }}</h3>
+        <h4 name="price">Price ksh_{{ menudetails.foodprice }}</h4>
+        <p>Description: {{ menudetails.fooddescription }}</p>
+     </div>
+
+
+
+{% endblock %}
+
+
